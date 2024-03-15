@@ -15,7 +15,7 @@ st.set_page_config(layout="wide")
 
 st.header('EMAIL TESTING', divider='rainbow')
 st.subheader('How to use:')
-st.caption(f'{namespaces}.{{anything}}@inbox.testmail.app')
+st.caption(f'{namespaces}.{{use anything in this section}}@inbox.testmail.app')
 
 for email in data["emails"]:
     st.write(f"From: {email['from']}")
