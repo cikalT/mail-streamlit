@@ -1,11 +1,12 @@
 import streamlit as st
 import requests
 from datetime import datetime
+import toml
 
 tokens =  st.secrets["TOKENS"]
 namespaces = st.secrets["NAMESPACES"]
 
-response = requests.get(f"https://api.testmail.app/api/json?apikey={tokens}&namespace={namespaces}&pretty=true")
+response = requests.get("https://api.testmail.app/api/json?apikey=bfe23c1a-a2b4-49a6-95e5-4b39e27de424&namespace=84z4f&pretty=true")
 
 print("this is the res", response)
 data = response.json()
