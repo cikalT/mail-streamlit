@@ -6,6 +6,8 @@ tokens =  st.secrets["TOKENS"]
 namespaces = st.secrets["NAMESPACES"]
 
 response = requests.get(f"https://api.testmail.app/api/json?apikey={tokens}&namespace={namespaces}&pretty=true")
+
+print("this is the res", response)
 data = response.json()
 
 st.set_page_config(layout="wide")
