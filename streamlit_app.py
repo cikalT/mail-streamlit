@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 
 def get_email_data(tokens, namespaces):
-    response = requests.get(f"https://api.testmail.app/api/json?apikey={tokens}&namespace={namespaces}&pretty=true")
+    response = requests.get(f"https://api.testmail.app/api/json?apikey={tokens}&namespace={namespaces}&pretty=true&limit=100")
     return response.json()
 
 tokens = st.secrets["TOKENS"]
