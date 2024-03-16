@@ -50,3 +50,4 @@ with right_column:
             date_str = datetime.utcfromtimestamp(email['date'] / 1000).strftime('%d/%m/%Y')
             st.write(f"Date: {date_str}", divider='green')
             st.components.v1.html(email['html'], height=1000, scrolling=True)
+            st.header('', divider='green')
