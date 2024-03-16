@@ -48,5 +48,5 @@ with right_column:
             st.write(f"Subject: {email['subject']}")
             
             date_str = datetime.utcfromtimestamp(email['date'] / 1000).strftime('%d/%m/%Y')
-            st.write(f"Date: {date_str}")
+            st.write(f"Date: {date_str}", divider='green')
             st.components.v1.html(email['html'], height=1000, scrolling=True)
