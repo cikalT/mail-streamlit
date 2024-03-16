@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 
 def get_email_data(tokens, namespaces, offset=0):
     response = requests.get(f"https://api.testmail.app/api/json?apikey={tokens}&namespace={namespaces}&pretty=true&limit=100&offset={offset}")
@@ -47,7 +47,7 @@ with right_column:
             st.write(f"To: {email['to']}")
             st.write(f"Subject: {email['subject']}")
             
-            date_str = datetime.utcfromtimestamp(email['date'] / 1000).strftime('%d/%m/%Y')
-            st.write(f"Date: {date_str}", divider='green')
+            date_str = datetime.utcfromtimestamp(email['date'] / 1000).replace(tzinfo=timezone.utc).strftime('%d/%m/%Y %H:%M:%S')
+            st.write(f"Date: {date_str}")
             st.components.v1.html(email['html'], height=1000, scrolling=True)
             st.header('', divider='green')
