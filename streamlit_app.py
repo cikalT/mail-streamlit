@@ -17,7 +17,6 @@ st.header('EMAIL TESTING', divider='rainbow')
 st.subheader('How to use:')
 st.caption(f'{namespaces}.{{use anything in this section}}@inbox.testmail.app')
 
-# Group emails by recipient
 emails_by_recipient = {}
 for email in data["emails"]:
     recipient = email['to']
@@ -25,10 +24,8 @@ for email in data["emails"]:
         emails_by_recipient[recipient] = []
     emails_by_recipient[recipient].append(email)
 
-# Define columns for layout with the left column having a fixed width
 left_column, right_column = st.columns([1, 3])
 
-# Display list of emails grouped by recipient on the left column
 with left_column:
     selected_recipient_emails = None
     for recipient, emails in emails_by_recipient.items():
@@ -37,7 +34,6 @@ with left_column:
             selected_recipient_emails = emails
             data = get_email_data(tokens, namespaces)
 
-# Display selected recipient's emails details on the right column
 with right_column:
     if selected_recipient_emails is not None:
         for email in selected_recipient_emails:
