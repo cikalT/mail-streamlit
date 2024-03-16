@@ -14,6 +14,7 @@ st.set_page_config(layout="wide")
 st.header('EMAIL TESTING', divider='rainbow')
 st.subheader('How to use:')
 st.caption(f'{namespaces}.{{use anything in this section}}@inbox.testmail.app')
+st.subheader('Refresh use "R"')
 
 emails_by_recipient = {}
 
